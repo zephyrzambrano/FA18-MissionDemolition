@@ -44,11 +44,6 @@ public class Slingshot : MonoBehaviour {
         projectileRigidBody=projectile.GetComponent<Rigidbody>();
         projectileRigidBody.isKinematic = true;
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -79,6 +74,7 @@ public class Slingshot : MonoBehaviour {
             aimingMode = false;
             projectileRigidBody.isKinematic = false;
             projectileRigidBody.velocity = -mouseDelta * velocityMult;
+            FollowCam.POI = projectile;
             projectile = null;
         }
 	}
